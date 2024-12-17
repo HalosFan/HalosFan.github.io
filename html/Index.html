@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PC Building Guide</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header .highlight-link {
+            margin: 0 10px;
+            color: cyan;
+            text-decoration: none;
+        }
+
+        .header .highlight-link:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            margin: 20px auto;
+            width: 80%;
+            text-align: left;
+        }
+
+        .features, .inspiration {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .tableau-embed {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pc-image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pc-image {
+            width: 400px;
+            height: auto;
+            border: 2px solid cyan;
+            border-radius: 10px;
+        }
+
+        a[href="#features"] {
+            color: cyan;
+            text-decoration: none;
+        }
+
+        a[href="#features"]:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My PC Building Guide</h1>
+        <p>Here are the parts for building a high-performance gaming PC.</p>
+        <a href="resume.html" class="highlight-link">Resume</a>
+        <a href="Gamedle.html" class="highlight-link">Gamedle</a>
+    </div>
+
+    <div class="content">
+        <p>Below are the essential parts of one of my current rigs. This was built on an all AMD platform:</p>
+
+        <!-- Ordered list with an embedded unordered list -->
+        <ol>
+            <li>CPU: AMD Ryzen 7 7800X3D</li>
+            <li>GPU: MSI Merc 310 7900XTX</li>
+            <li>RAM: 64GB DDR5</li>
+            <li>
+                Storage:
+                <ul>
+                    <li>5tb SSD</li>
+                    <li>8TB HDD</li>
+                </ul>
+            </li>
+            <li>Motherboard: MSI PRO X870-P WIFI</li>
+        </ol>
+
+        <p>Jump to the <a href="#features">Features</a> section.</p>
+
+        <!-- Centered PC Image -->
+        <div class="pc-image-container">
+            <img src="../images/AMD rig.JPG" alt="All AMD PC build" class="pc-image">
+        </div>
+
+        <!-- New "My Inspiration" section -->
+        <div class="inspiration">
+            <h2>My Inspiration</h2>
+            <p>The YouTube channel Basically Homeless inspired me to dive deeper into coding and engineering. He did this by showcasing the creativity and humor that can come from combining technical skills with out-of-the-box thinking. Watching him take unconventional ideas—like building a PC inside a toilet or make one gas powered—and turning them into real, functioning experiments made me realize how much fun it can be to push boundaries and solve problems in unique ways. His approach showed me that coding and engineering aren’t just about utility; they’re tools for exploration, creativity, and even comedy, motivating me to learn these skills to create my own experiments and bring wild ideas to life.</p>
+        </div>
+
+        <!-- Embedded YouTube video -->
+        <div class="video-container">
+            <iframe width="911" height="512" src="https://www.youtube.com/embed/qJ-ouwubvbU" title="I Built a Gas Powered PC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features" id="features">
+            <h2>Features of my PC Build</h2>
+            <p>This PC can handle high-end gaming and heavy workloads. It's perfect for gaming titles like Rainbow Six Siege and Apex Legends. The vertical mounting on the GPU allows it to not only fit nicely inside this case, but it also allows for the 3 additional case fans on the bottom to blow air up through the GPU. This means that even under load the GPU will stay cool. The CPU is cooled with a 280mm AIO from NZXT.</p>
+        </div>
+
+        <!-- Tableau Embed Section -->
+        <div class='tableauPlaceholder' id='viz1734322719821' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='Future Strategic Alignment' 
+                         src='https://public.tableau.com/static/images/De/DeclineComputerGameSales/FutureStrategicAligment/1_rss.png' 
+                         style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='DeclineComputerGameSales/FutureStrategicAligment' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/De/DeclineComputerGameSales/FutureStrategicAligment/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1734322719821');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '1100px';
+            vizElement.style.height = '827px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    
+    </body>
+ </html>
+    

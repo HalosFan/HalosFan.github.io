@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Guessing Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .game-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 80%;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #6200ea;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hint {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+
+        #win-screen, #lose-screen {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .nav-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="resume.html" class="nav-link">Resume</a>
+    <div class="game-container">
+        <h1>Game Guessing Web App</h1>
+        <div id="game-screen">
+            <p>Can you guess the title of the video game we're thinking of? You get a hint after each wrong guess but you only have 3 tries!</p>
+            <input type="text" id="guessInput" placeholder="Enter your guess here">
+            <button onclick="submitGuess()">Submit Guess</button>
+            <div class="hint" id="hint"></div>
+        </div>
+        <div id="win-screen" class="hidden">
+            <h2>You guessed it!</h2>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+        <div id="lose-screen" class="hidden">
+            <h2>You lost! The correct answer was: <span id="correct-game"></span></h2>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script>
+        const games = [
+            { title: "Dark Souls", series: "Dark Souls", publisher: "FromSoftware", year: 2011 },
+            { title: "Elden Ring", series: null, publisher: "FromSoftware", year: 2022 },
+            { title: "Black Ops 2", series: "Call of Duty", publisher: "Activision", year: 2012 },
+            { title: "Cyberpunk 2077", series: null, publisher: "CD Projekt RED", year: 2020 },
+            { title: "Witcher 3", series: "Witcher", publisher: "CD Projekt RED", year: 2011 },
+            { title: "Fortnite", series: null, publisher: "Epic Games", year: 2017 },
+            { title: "Minecraft", series: null, publisher: "Mojang", year: 2009 },
+            { title: "Nier Automata", series: "Nier", publisher: "Square Enix", year: 2017 },
+            { title: "Half Life 2", series: "Half Life", publisher: "Valve", year: 2004 },
+            { title: "Portal 2", series: "Portal", publisher: "Valve", year: 2011 },
+            { title: "The Legend of Zelda: Ocarina of Time", series: "The Legend of Zelda", publisher: "Nintendo", year: 1998 },
+            { title: "Super Mario Galaxy", series: "Super Mario", publisher: "Nintendo", year: 2007 },
+            { title: "Tony Hawk's Pro Skater 3", series: "Pro Skater", publisher: "Activision", year: 2001 },
+            { title: "Metroid Prime", series: "Metroid", publisher: "Nintendo", year: 2002 },
+            { title: "Tekken 3", series: "Tekken", publisher: "Bandai Namco", year: 1997 }
+        ];
+
+        let currentGame = games[Math.floor(Math.random() * games.length)];
+        let attempts = 0;
+        const maxAttempts = 4;  // Limit to 4 attempts before losing
+
+        function submitGuess() {
+            const userGuess = document.getElementById("guessInput").value.trim();
+            attempts++;
+
+            if (userGuess.toLowerCase() === currentGame.title.toLowerCase()) {
+                document.getElementById("game-screen").classList.add("hidden");
+                document.getElementById("win-screen").classList.remove("hidden");
+            } else {
+                giveHint(userGuess);
+            }
+
+            if (attempts >= maxAttempts) {
+                document.getElementById("game-screen").classList.add("hidden");
+                document.getElementById("lose-screen").classList.remove("hidden");
+                document.getElementById("correct-game").textContent = currentGame.title;
+            }
+        }
+
+        function giveHint(guess) {
+            const hintElement = document.getElementById("hint");
+
+            if (!hintElement.innerHTML) {
+                hintElement.innerHTML = `<p>First clue: The year is ${currentGame.year}</p>`;
+            } else if (hintElement.children.length === 1) {
+                hintElement.innerHTML += `<p>Second clue: The developer/publisher is ${currentGame.publisher}</p>`;
+            } else if (hintElement.children.length === 2) {
+                const seriesClue = currentGame.series ? `The series is ${currentGame.series}` : "This game is NOT a part of a series";
+                hintElement.innerHTML += `<p>Third clue: ${seriesClue}</p>`;
+            }
+        }
+
+        function restartGame() {
+            currentGame = games[Math.floor(Math.random() * games.length)];
+            attempts = 0;
+            document.getElementById("guessInput").value = "";
+            document.getElementById("hint").textContent = "";
+            document.getElementById("game-screen").classList.remove("hidden");
+            document.getElementById("win-screen").classList.add("hidden");
+            document.getElementById("lose-screen").classList.add("hidden");
+        }
+    </script>
+</body>
+
+</html>

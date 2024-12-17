@@ -1,0 +1,83 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+.header {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+}
+
+/* Content section styles */
+.content {
+    padding: 20px;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+/* Image styling */
+.pc-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    display: block;
+    margin: 20px 0;
+}
+
+/* Video container styling */
+.video-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Feature section styles */
+.features {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Tableau graph container */
+.tableau-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #2d2d2d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-link {
+    color: #FFD700; /* Gold */
+    font-weight: bold; /* Optional: Make the text bold for emphasis */
+}
+
+.highlight-link {
+    color: #FFD700; /* Gold */
+    font-weight: bold; /* Optional */
+}
